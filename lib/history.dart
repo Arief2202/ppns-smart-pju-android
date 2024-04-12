@@ -99,6 +99,9 @@ class HistoryState extends State<History> with RestorationMixin  {
     super.initState();
     getEndpoint();
     timer = Timer.periodic(Duration(milliseconds: 10000), (Timer t) => updateValue());
+    setState(() {
+      currentData = DataHistory(status: "", pesan: "", data: dataPJU);
+    });
   }
 
   void getEndpoint() async {
